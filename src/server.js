@@ -10,7 +10,6 @@ const ClothesRouter = require("../src/routes/clothes");
 app.use(express.json());
 app.use(ClothesRouter);
 app.use(FoodRouter);
-app.use(notFoundHandler);
 app.use(errorHandler); 
 
 
@@ -24,6 +23,8 @@ function start(port) {
         console.log(`Listen and Running on port ${port}`);
     });
 }
+
+app.use(notFoundHandler);
 
 module.exports = {
     app: app,

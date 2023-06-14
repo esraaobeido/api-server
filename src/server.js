@@ -6,10 +6,15 @@ const notFoundHandler = require("../src/error-handlers/404");
 const errorHandler = require("../src/error-handlers/500");
 const FoodRouter = require("../src/routes/food");
 const ClothesRouter = require("../src/routes/clothes");
+const IngredientRouter = require('../src/routes/ingredients.route');
+const RecipeRouter = require('../src/routes/recipes.route');
+
 
 app.use(express.json());
 app.use(ClothesRouter);
 app.use(FoodRouter);
+app.use(IngredientRouter);
+app.use(RecipeRouter);
 app.use(errorHandler); 
 
 
